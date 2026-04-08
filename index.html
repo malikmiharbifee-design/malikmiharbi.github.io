@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ink & ivory | Botol Parfum Koleksi</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fefaf5;
+            background-image: radial-gradient(circle at 10% 20%, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.01) 1%, transparent 1%),
+                              radial-gradient(circle at 80% 40%, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.01) 1.5%, transparent 1.5%);
+            background-size: 40px 40px, 32px 32px;
+            color: #2c241e;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 2rem 1.8rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* header ink & ivory */
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1rem 0 0.8rem;
+            border-bottom: 2px solid #ece2d8;
+        }
+
+        .brand-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1f1712, #6f4e3a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .brand-logo i {
+            font-size: 2.5rem;
+            background: none;
+            -webkit-background-clip: unset;
+            color: #b48b6e;
+        }
+
+        .hero .sub {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9c7b63;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 550px;
+            margin: 0.8rem auto 0;
+            color: #6e5442;
+            font-size: 0.95rem;
+        }
+
+        /* GRID PRODUK */
+        .perfume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 1rem;
+        }
+
+        /* kartu */
+        .perfume-card {
+            background: #ffffff;
+            border-radius: 1.8rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(156, 107, 75, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .perfume-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 36px -14px rgba(56, 36, 24, 0.15), 0 0 0 1px #e2cfbc;
+        }
+
+        /* area gambar botol parfum */
+        .image-wrapper {
+            background: linear-gradient(145deg, #fcf6ef, #f7ede2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem 1.5rem;
+            min-height: 260px;
+            position: relative;
+            border-bottom: 1px solid #f0e3d8;
+        }
+
+        /* style gambar botol parfum menggunakan img dengan ilustrasi unik */
+        .perfume-bottle-img {
+            width: auto;
+            max-width: 160px;
+            height: 160px;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.15));
+            transition: transform 0.25s ease;
+        }
+
+        .perfume-card:hover .perfume-bottle-img {
+            transform: scale(1.02) translateY(-3px);
+        }
+
+        /* badge jenis */
+        .perfume-cat {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            background: rgba(44, 36, 30, 0.7);
+            backdrop-filter: blur(4px);
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #fff1e6;
+            letter-spacing: 0.3px;
+        }
+
+        /* konten */
+        .card-content {
+            padding: 1.2rem 1.3rem 1.6rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .perfume-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #31261f;
+            margin-bottom: 0.2rem;
+        }
+
+        .brand-sub {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #b28667;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin-bottom: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .description {
+            font-size: 0.85rem;
+            line-height: 1.45;
+            color: #5c4536;
+            margin: 0.4rem 0 0.9rem;
+            font-weight: 400;
+        }
+
+        .note-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin: 0.5rem 0 0.9rem;
+        }
+
+        .note {
+            background: #f3ede8;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            color: #876b56;
+        }
+
+        .price {
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: #b45f2b;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-top: 0.4rem;
+            border-top: 1px solid #f0e2d6;
+            padding-top: 0.8rem;
+        }
+
+        .price span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #a77c5e;
+        }
+
+        .price i {
+            font-size: 0.9rem;
+            color: #b87a4b;
+        }
+
+        /* TOMBEL PEMBELIAN - style baru */
+        .buy-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #2c241e, #4a3729);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: 100%;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.3px;
+            text-decoration: none;
+        }
+
+        .buy-button i {
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #1f1813, #3e2c20);
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .buy-button:hover i {
+            transform: translateX(3px);
+        }
+
+        .buy-button:active {
+            transform: scale(0.98);
+        }
+
+        /* notifikasi belanja (opsional, tetap dipertahankan) */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #2c241e;
+            color: #f9e7cf;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 1000;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(8px);
+            background: rgba(44, 36, 30, 0.95);
+            font-family: 'Inter', sans-serif;
+            pointer-events: none;
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .price-limit-badge {
+            text-align: center;
+            margin: 1.8rem auto 0.5rem;
+            display: inline-block;
+            width: auto;
+            background: #efe2d6;
+            padding: 0.4rem 1.3rem;
+            border-radius: 80px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5e3c28;
+        }
+
+        /* CUSTOMER CARE BUTTON - style baru */
+        .customer-care {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        .wa-button {
+            background-color: #25D366;
+            color: white;
+            border-radius: 60px;
+            padding: 14px 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .wa-button i {
+            font-size: 1.5rem;
+        }
+
+        .wa-button:hover {
+            transform: scale(1.05);
+            background-color: #20b859;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .customer-care-label {
+            background: rgba(44, 36, 30, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            color: #f2e2d2;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.2rem 1rem 2.5rem;
+            }
+            .brand-logo {
+                font-size: 2.4rem;
+            }
+            .brand-logo i {
+                font-size: 1.8rem;
+            }
+            .perfume-grid {
+                gap: 1.3rem;
+            }
+            .perfume-bottle-img {
+                height: 130px;
+                max-width: 130px;
+            }
+            .buy-button {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            .wa-button {
+                padding: 10px 16px;
+                font-size: 0.8rem;
+            }
+            .wa-button i {
+                font-size: 1.2rem;
+            }
+            .customer-care {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .perfume-card {
+            animation: fadeSlide 0.5s ease forwards;
+            opacity: 0;
+        }
+        .perfume-card:nth-child(1) { animation-delay: 0.02s; opacity: 1; }
+        .perfume-card:nth-child(2) { animation-delay: 0.08s; opacity: 1; }
+        .perfume-card:nth-child(3) { animation-delay: 0.14s; opacity: 1; }
+        .perfume-card:nth-child(4) { animation-delay: 0.2s; opacity: 1; }
+        .perfume-card:nth-child(5) { animation-delay: 0.26s; opacity: 1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="brand-logo">
+            <i class="fas fa-feather-alt"></i> ink & ivory
+            <i class="fas fa-pen-fancy"></i>
+        </div>
+        <div class="sub">— artisanal fragrance studio —</div>
+        <p>Botol parfum edisi terbatas dengan desain minimalis. Setiap aroma terinspirasi dari tinta, kertas, dan keheningan malam. <strong>Semua koleksi ≤ Rp300.000</strong>.</p>
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <div class="price-limit-badge">
+            <i class="fas fa-check-circle"></i> Harga maksimal Rp300.000
+        </div>
+    </div>
+
+    <div class="perfume-grid">
+        <!-- 1. Paperbloom - botol kaca bening dengan aksen kayu -->
+        <div class="perfume-card">
+            <div class="image-wrapper">
+                <img class="perfume-bottle-img" src="https://image2url.com/r2/default/images/1775612511688-52a2f244-01f6-444c-9cc4-eb6da63db339.jpg"
+                     alt="Botol Paperbloom">
+                <div class="perfume-cat"><i class="fas fa-book"></i> 木质书香</div>
+            </div>
+            <div class="card-content">
+                <div class="perfume-title">Paperbloom</div>
+                <div class="brand-sub"><i class="fas fa-pencil-ruler"></i> ink signature</div>
+                <div class="description">
+                    Aroma serutan pensil cedar yang hangat berpadu dengan lembutnya bunga kertas dan tinta hitam. 
+                    Mengingatkan pada perpustakaan tua dan secangkir teh sore.
+                </div>
+                <div class="note-list">
+                    <span class="note">Cedarwood</span>
+                    <span class="note">Tinta</span>
+                    <span class="note">Violet Leaf</span>
+                    <span class="note">Musk</span>
+                </div>
+                <div class="price">
+                    <i class="fas fa-tag"></i> Rp285.000 <span>/ 50 ml EDP</span>
+                </div>
+                <a class="buy-button" href="#" data-name="Paperbloom" data-price="285000">
+                    <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+
+        <!-- 2. White Ink - botol putih bersih dengan tutup perak -->
+        <div class="perfume-card">
+            <div class="image-wrapper">
+                <img class="perfume-bottle-img" src="https://cdn.phototourl.com/free/2026-04-08-d5972c8b-ca6e-41cd-b275-3b2c3eae3e64.jpg"
+                     alt="Botol White Ink">
+                <div class="perfume-cat"><i class="fas fa-cloud"></i> 清净肌肤</div>
+            </div>
+            <div class="card-content">
+                <div class="perfume-title">White Ink</div>
+                <div class="brand-sub"><i class="fas fa-feather"></i> clean collection</div>
+                <div class="description">
+                    Sensasi tinta putih yang bersih, kapas baru, dan nada orris root. Lembut, sedikit bubuk, 
+                    memberikan kesan tenang & elegan seperti kanvas kosong.
+                </div>
+                <div class="note-list">
+                    <span class="note">Iris</span>
+                    <span class="note">Cotton Flower</span>
+                    <span class="note">White Musk</span>
+                    <span class="note">Amber Xtreme</span>
+                </div>
+                <div class="price">
+                    <i class="fas fa-tag"></i> Rp275.000 <span>/ 50 ml EDP</span>
+                </div>
+                <a class="buy-button" href="#" data-name="White Ink" data-price="275000">
+                    <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. Noir Nicotine - botol gelap elegan dengan aksen emas -->
+        <div class="perfume-card">
+            <div class="image-wrapper">
+                <img class="perfume-bottle-img" src="https://cdn.phototourl.com/free/2026-04-08-cdbd050e-c00e-4276-92c0-3c52ffb2a262.jpg"
+                     alt="Botol Noir Nicotine">
+                <div class="perfume-cat"><i class="fas fa-fire"></i> 琥珀皮革</div>
+            </div>
+            <div class="card-content">
+                <div class="perfume-title">Noir Nicotine</div>
+                <div class="brand-sub"><i class="fas fa-skull"></i> midnight ink</div>
+                <div class="description">
+                    Aroma tembakau madu yang manis, sentuhan resin benzoin, dan sedikit kulit samak. 
+                    Intens namun tetap berkelas — jejak yang berani.
+                </div>
+                <div class="note-list">
+                    <span class="note">Honey Tobacco</span>
+                    <span class="note">Benzoin</span>
+                    <span class="note">Leather</span>
+                    <span class="note">Patchouli</span>
+                </div>
+                <div class="price">
+                    <i class="fas fa-tag"></i> Rp295.000 <span>/ 50 ml EDP</span>
+                </div>
+                <a class="buy-button" href="#" data-name="Noir Nicotine" data-price="295000">
+                    <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+
+        <!-- 4. Gilded Garden - botol elegan dengan aksen emas dan floral -->
+        <div class="perfume-card">
+            <div class="image-wrapper">
+                <img class="perfume-bottle-img" src="https://cdn.phototourl.com/free/2026-04-08-96ea0d4f-fbfd-4119-ae48-a8330c354b5b.jpg"
+                     alt="Botol Gilded Garden">
+                <div class="perfume-cat"><i class="fas fa-seedling"></i> 花园诗意</div>
+            </div>
+            <div class="card-content">
+                <div class="perfume-title">Gilded Garden</div>
+                <div class="brand-sub"><i class="fas fa-leaf"></i> ivory collection</div>
+                <div class="description">
+                    Karangan bunga peony, magnolia, dan sentuhan buah pir segar. 
+                    Feminim, ceria, namun memiliki kedalaman dari ambrette seed. 
+                </div>
+                <div class="note-list">
+                    <span class="note">Peony</span>
+                    <span class="note">Pear</span>
+                    <span class="note">Magnolia</span>
+                    <span class="note">Ambrette</span>
+                </div>
+                <div class="price">
+                    <i class="fas fa-tag"></i> Rp260.000 <span>/ 50 ml EDP</span>
+                </div>
+                <a class="buy-button" href="#" data-name="Gilded Garden" data-price="260000">
+                    <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+
+        <!-- 5. Coal & Vetiver - botol gelap dengan nuansa maskulin dan kayu -->
+        <div class="perfume-card">
+            <div class="image-wrapper">
+                <img class="perfume-bottle-img" src="https://cdn.phototourl.com/free/2026-04-08-c6990df0-106d-4960-b169-3e716925e53a.jpg"
+                     alt="Botol Coal & Vetiver">
+                <div class="perfume-cat"><i class="fas fa-mountain"></i> 木质烟熏</div>
+            </div>
+            <div class="card-content">
+                <div class="perfume-title">Coal & Vetiver</div>
+                <div class="brand-sub"><i class="fas fa-gem"></i> dark ink</div>
+                <div class="description">
+                    Aroma arang halus, vetiver tanah, dengan sedikit asap kayu guaiac. Maskulin, 
+                    kompleks, dan memberikan nuansa puitis yang gelap sekaligus menenangkan.
+                </div>
+                <div class="note-list">
+                    <span class="note">Vetiver Haiti</span>
+                    <span class="note">Birch Tar</span>
+                    <span class="note">Guaiacwood</span>
+                    <span class="note">Saffron</span>
+                </div>
+                <div class="price">
+                    <i class="fas fa-tag"></i> Rp290.000 <span>/ 50 ml EDP</span>
+                </div>
+                <a class="buy-button" href="#" data-name="Coal & Vetiver" data-price="290000">
+                    <i class="fas fa-shopping-cart"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span><i class="fas fa-feather"></i> ink & ivory — Jakarta based</span>
+        <span><i class="fas fa-hand-holding-heart"></i> Harga ramah di kantong ≤ Rp300k</span>
+        <span><i class="fas fa-recycle"></i> 100% cruelty-free & phthalate-free</span>
+        <span><i class="fas fa-flask"></i> Botol kaca premium edisi terbatas</span>
+    </div>
+</div>
+
+<!-- Customer Care Floating WhatsApp -->
+<div class="customer-care">
+    <div class="customer-care-label">
+        <i class="fas fa-headset"></i> Customer Care
+    </div>
+    <a href="https://wa.me/6281234567890?text=Halo%20ink%20%26%20ivory%2C%20saya%20ingin%20konsultasi%20tentang%20parfum" 
+       class="wa-button" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+    </a>
+</div>
+
+<!-- Notifikasi Toast (opsional, tetap ada untuk feedback) -->
+<div id="cartToast" class="toast-notification">
+    <i class="fas fa-check-circle"></i> <span id="toastMessage">Produk ditambahkan</span>
+</div>
+
+<script>
+    // Nomor WhatsApp toko (bisa disesuaikan)
+    const WA_NUMBER = "085295877141"; // Ganti dengan nomor WhatsApp toko sebenarnya
+    
+    // Fungsi untuk menampilkan notifikasi (opsional)
+    function showToast(message) {
+        const toast = document.getElementById('cartToast');
+        const toastMsg = document.getElementById('toastMessage');
+        toastMsg.innerHTML = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+
+    // Event listener untuk semua tombol beli sekarang -> redirect ke WA dengan pesan otomatis
+    document.querySelectorAll('.buy-button').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const productName = this.getAttribute('data-name');
+            const productPrice = this.getAttribute('data-price');
+            const formattedPrice = new Intl.NumberFormat('id-ID').format(productPrice);
+            
+            // Membuat pesan WhatsApp
+            const message = `Halo ink & ivory,%0A%0ASaya tertarik untuk membeli:*%0A📦 ${productName}%0A💰 Rp${formattedPrice} (50ml EDP)%0A%0ATolong infokan ketersediaan dan cara pemesanan. Terima kasih!`;
+            
+            // Redirect ke WhatsApp
+            const waUrl = `https://wa.me/${WA_NUMBER}?text=${message}`;
+            window.open(waUrl, '_blank');
+            
+            // Tampilkan notifikasi kecil (opsional)
+            showToast(`🛒 Mengarahkan ke WhatsApp untuk ${productName}`);
+            
+            // Efek animasi kecil pada tombol
+            this.style.transform = 'scale(0.97)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+    });
+</script>
+</body>
+  </html>
